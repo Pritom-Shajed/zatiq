@@ -8,5 +8,8 @@
     "contactWithAdmin": "Contact with Admin",
     "dashboard": "Dashboard",
     "productName": "Product Name",
-    "product" : "Product"
+    "product" : "Product",
+    "category": "Category",
+    "brand": "Brand",
+    "price": "Price"
 }

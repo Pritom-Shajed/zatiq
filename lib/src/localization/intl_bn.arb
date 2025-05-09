@@ -8,5 +8,8 @@
     "contactWithAdmin": "অ্যাডমিনের সাথে যোগাযোগ করুন।",
     "dashboard": "ড্যাশবোর্ড",
     "productName": "পণ্যের নাম",
-    "product" : "পণ্য"
+    "product" : "পণ্য",
+    "category": "শ্রেণী",
+    "brand": "ব্র্যান্ড",
+    "price": "দাম"
 }

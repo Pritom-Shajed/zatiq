@@ -5,6 +5,7 @@ import 'package:zatiq/src/core/utils/extensions/extensions.dart';
 import 'package:zatiq/src/core/utils/images/app_images.dart';
 import 'package:zatiq/src/core/utils/responsive/responsive_utils.dart';
 import 'package:zatiq/src/features/home/domain/entities/product/product_entity.dart';
+import 'package:zatiq/src/localization/app_locale.dart';
 
 class ProductCard extends StatelessWidget {
   final ProductEntity product;
@@ -94,7 +95,7 @@ class ProductCard extends StatelessWidget {
                 // Category
                 Text.rich(
                   TextSpan(
-                    text: 'Category : ',
+                    text: '${t.category} : ',
                     style: context.text.bodySmall?.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
@@ -112,7 +113,7 @@ class ProductCard extends StatelessWidget {
                 // Branch
                 Text.rich(
                   TextSpan(
-                    text: 'Brand : ',
+                    text: '${t.brand} : ',
                     style: context.text.bodySmall?.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
@@ -130,7 +131,7 @@ class ProductCard extends StatelessWidget {
                 // Price
                 Text.rich(
                   TextSpan(
-                    text: 'Price : ',
+                    text: '${t.price} : ',
                     style: context.text.bodySmall?.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
