@@ -6,6 +6,7 @@ import 'package:zatiq/src/core/configs/constants.dart';
 import 'package:zatiq/src/core/shared/animations_widget/animated_popup.dart';
 import 'package:zatiq/src/core/shared/animations_widget/animated_widget_shower.dart';
 import 'package:zatiq/src/core/shared/list_tile/k_list_tile/k_list_tile.dart';
+import 'package:zatiq/src/core/utils/images/app_images.dart';
 import 'package:zatiq/src/features/settings/presentation/bloc/locale/locale_bloc.dart';
 import 'package:zatiq/src/localization/app_locale.dart';
 
@@ -21,7 +22,7 @@ class LocaleTile extends StatelessWidget {
       leading: AnimatedWidgetShower(
         size: 30.0,
         child: SvgPicture.asset(
-          'assets/svgs/language.svg',
+          AppSvgImages.language,
           colorFilter: context.theme.primaryColor.toColorFilter,
           semanticsLabel: 'Language',
         ),

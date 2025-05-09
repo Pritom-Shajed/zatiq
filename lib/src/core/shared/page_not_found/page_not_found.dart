@@ -1,11 +1,12 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart' show SvgPicture;
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:zatiq/src/core/configs/constants.dart';
 import 'package:zatiq/src/core/configs/get_platform.dart';
 import 'package:zatiq/src/core/utils/colors/app_colors.dart';
 import 'package:zatiq/src/core/utils/extensions/extensions.dart';
+import 'package:zatiq/src/core/utils/images/app_images.dart';
 import 'package:zatiq/src/injector.dart';
 
 class KPageNotFound extends StatelessWidget {
@@ -23,7 +24,7 @@ class KPageNotFound extends StatelessWidget {
             mainAxisAlignment: mainCenter,
             children: [
               SvgPicture.asset(
-                'assets/svgs/error.svg',
+                AppSvgImages.error,
                 height: context.width * 0.35,
                 width: context.width * 0.35,
               ),

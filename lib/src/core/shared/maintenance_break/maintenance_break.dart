@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:zatiq/src/core/configs/constants.dart';
+import 'package:zatiq/src/core/utils/images/app_images.dart';
 import 'package:zatiq/src/localization/app_locale.dart';
 
 class MaintenanceBreak extends StatelessWidget {
@@ -20,7 +21,7 @@ class MaintenanceBreak extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               SvgPicture.asset(
-                'assets/svgs/maintenance.svg',
+                AppSvgImages.error,
                 semanticsLabel: 'Maintenance Break',
                 width: size.height * 0.22,
                 placeholderBuilder: (_) => Container(

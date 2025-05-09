@@ -1,4 +1,5 @@
 import 'package:hive_ce/hive.dart';
+import 'package:zatiq/src/core/utils/images/app_images.dart';
 
 import '../../repositories/hive_box.dart';
 
