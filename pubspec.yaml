@@ -33,6 +33,8 @@ dependencies:
   freezed_annotation: ^3.0.0
   form_builder_validators: ^11.1.2
   fluttertoast: ^8.2.12
+  cached_network_image: ^3.4.1
+  solar_icon_pack: ^0.2.1
 
 dev_dependencies:
   flutter_test:
@@ -54,6 +56,7 @@ flutter:
     - .env
     - assets/fonts/
     - assets/svgs/
+    - assets/pngs/
 
   fonts:
     - family: NeueHaasDisplay

@@ -6,5 +6,7 @@
     "theme":"Theme",
     "urlConfig": "Url Config",
     "contactWithAdmin": "Contact with Admin",
-    "dashboard": "Dashboard"
+    "dashboard": "Dashboard",
+    "productName": "Product Name",
+    "product" : "Product"
 }

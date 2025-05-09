@@ -1,5 +1,6 @@
 class ApiEndpoints {
   ApiEndpoints._();
 
-  static  String productList({int? pageNo}) => 'api/ProductList?page=$pageNo';
+  static String productList({int? pageNo, String? searchQuery}) =>
+      'api/ProductList?page=${pageNo ?? ''}&search=${searchQuery ?? ''}';
 }

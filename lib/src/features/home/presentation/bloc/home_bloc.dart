@@ -1,5 +1,4 @@
-import 'package:auth/src/core/network/failure/failure.dart';
-import 'package:auth/src/features/home/domain/entities/product/product_list_entity.dart';
+import 'package:auth/src/features/home/domain/entities/product/product_entity.dart';
 import 'package:auth/src/features/home/domain/usecase/fetch_product_list_usecase.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -19,13 +18,36 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     FetchProductList event,
     Emitter<HomeState> emit,
   ) async {
-    emit(const HomeState.loading());
+    // Prevent duplicate fetch if already loading or no more data
+    final currentState = state;
+    if (currentState is Loaded && !currentState.hasMore) return;
 
-    final result = await _fetchProductListUseCase(pageNo: event.page);
+    // Emit loading for the first page only
+    if (event.page == 1) emit(const HomeState.loading());
+
+    final result = await _fetchProductListUseCase(
+      pageNo: event.page,
+      searchQuery: event.searchQuery,
+    );
 
     result.fold(
-      (Failure failure) => emit(HomeState.error(failure.message)),
-      (ProductListEntity productList) => emit(HomeState.loaded(productList)),
+      (failure) => emit(HomeState.error(failure.message)),
+      (productList) {
+        final products = productList.data;
+        final totalCount = productList.total;
+
+        final allProducts =
+            currentState is Loaded && event.page > 1 ? [...currentState.products, ...products] : products;
+
+        final hasMore = allProducts.length < totalCount;
+
+        emit(HomeState.loaded(
+          products: allProducts,
+          currentPage: event.page,
+          hasMore: hasMore,
+          searchQuery: event.searchQuery,
+        ));
+      },
     );
   }
 }

@@ -88,8 +88,8 @@ class ApiClient {
       log.i('Response of $endPoint by $method: $responseData');
       return responseData;
     } on DioException catch (e) {
-      log.e('Request failed: ${e.response?.data['message'] ?? e.message}');
-      return Future.error(e.response?.data['message'] ?? e.message);
+      log.e('Request failed: ${e.response?.data ?? e.message}');
+      return Future.error(e.response?.data ?? e.message);
     } catch (e) {
       log.e('Request failed: $e');
       return Future.error(e);

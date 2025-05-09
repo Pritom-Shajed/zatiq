@@ -11,7 +11,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
 abstract class HomeRmoteService {
-  Future<Either<Failure, ProductListEntity>> fetchProductList({required int pageNo});
+  Future<Either<Failure, ProductListEntity>> fetchProductList({required int pageNo, String? searchQuery});
 }
 
 class HomeRmoteServiceImpl extends HomeRmoteService {
@@ -19,11 +19,11 @@ class HomeRmoteServiceImpl extends HomeRmoteService {
   HomeRmoteServiceImpl(this._apiClient);
 
   @override
-  Future<Either<Failure, ProductListEntity>> fetchProductList({required int pageNo}) async {
+  Future<Either<Failure, ProductListEntity>> fetchProductList({required int pageNo, String? searchQuery}) async {
     try {
       final response = await _apiClient.request(
         ApiClientMethod.get,
-        ApiEndpoints.productList(pageNo: pageNo),
+        ApiEndpoints.productList(pageNo: pageNo, searchQuery: searchQuery),
       );
 
       final Map<String, dynamic> decoded = json.decode(response);

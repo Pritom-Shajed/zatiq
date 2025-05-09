@@ -58,10 +58,12 @@ class Started implements HomeEvent {
 /// @nodoc
 
 class FetchProductList implements HomeEvent {
-  const FetchProductList({this.page = 1});
+  const FetchProductList({this.page = 1, this.searchQuery = ''});
 
   @JsonKey()
   final int page;
+  @JsonKey()
+  final String searchQuery;
 
   /// Create a copy of HomeEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -75,15 +77,17 @@ class FetchProductList implements HomeEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is FetchProductList &&
-            (identical(other.page, page) || other.page == page));
+            (identical(other.page, page) || other.page == page) &&
+            (identical(other.searchQuery, searchQuery) ||
+                other.searchQuery == searchQuery));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, page);
+  int get hashCode => Object.hash(runtimeType, page, searchQuery);
 
   @override
   String toString() {
-    return 'HomeEvent.fetchProductList(page: $page)';
+    return 'HomeEvent.fetchProductList(page: $page, searchQuery: $searchQuery)';
   }
 }
 
@@ -94,7 +98,7 @@ abstract mixin class $FetchProductListCopyWith<$Res>
           FetchProductList value, $Res Function(FetchProductList) _then) =
       _$FetchProductListCopyWithImpl;
   @useResult
-  $Res call({int page});
+  $Res call({int page, String searchQuery});
 }
 
 /// @nodoc
@@ -110,12 +114,17 @@ class _$FetchProductListCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   $Res call({
     Object? page = null,
+    Object? searchQuery = null,
   }) {
     return _then(FetchProductList(
       page: null == page
           ? _self.page
           : page // ignore: cast_nullable_to_non_nullable
               as int,
+      searchQuery: null == searchQuery
+          ? _self.searchQuery
+          : searchQuery // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -185,9 +194,24 @@ class Loading implements HomeState {
 /// @nodoc
 
 class Loaded implements HomeState {
-  const Loaded(this.productList);
+  const Loaded(
+      {required final List<ProductEntity> products,
+      required this.currentPage,
+      required this.hasMore,
+      this.searchQuery = ''})
+      : _products = products;
 
-  final ProductListEntity productList;
+  final List<ProductEntity> _products;
+  List<ProductEntity> get products {
+    if (_products is EqualUnmodifiableListView) return _products;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_products);
+  }
+
+  final int currentPage;
+  final bool hasMore;
+  @JsonKey()
+  final String searchQuery;
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
@@ -201,16 +225,25 @@ class Loaded implements HomeState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is Loaded &&
-            (identical(other.productList, productList) ||
-                other.productList == productList));
+            const DeepCollectionEquality().equals(other._products, _products) &&
+            (identical(other.currentPage, currentPage) ||
+                other.currentPage == currentPage) &&
+            (identical(other.hasMore, hasMore) || other.hasMore == hasMore) &&
+            (identical(other.searchQuery, searchQuery) ||
+                other.searchQuery == searchQuery));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, productList);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_products),
+      currentPage,
+      hasMore,
+      searchQuery);
 
   @override
   String toString() {
-    return 'HomeState.loaded(productList: $productList)';
+    return 'HomeState.loaded(products: $products, currentPage: $currentPage, hasMore: $hasMore, searchQuery: $searchQuery)';
   }
 }
 
@@ -219,7 +252,11 @@ abstract mixin class $LoadedCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
   factory $LoadedCopyWith(Loaded value, $Res Function(Loaded) _then) =
       _$LoadedCopyWithImpl;
   @useResult
-  $Res call({ProductListEntity productList});
+  $Res call(
+      {List<ProductEntity> products,
+      int currentPage,
+      bool hasMore,
+      String searchQuery});
 }
 
 /// @nodoc
@@ -233,13 +270,28 @@ class _$LoadedCopyWithImpl<$Res> implements $LoadedCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? productList = null,
+    Object? products = null,
+    Object? currentPage = null,
+    Object? hasMore = null,
+    Object? searchQuery = null,
   }) {
     return _then(Loaded(
-      null == productList
-          ? _self.productList
-          : productList // ignore: cast_nullable_to_non_nullable
-              as ProductListEntity,
+      products: null == products
+          ? _self._products
+          : products // ignore: cast_nullable_to_non_nullable
+              as List<ProductEntity>,
+      currentPage: null == currentPage
+          ? _self.currentPage
+          : currentPage // ignore: cast_nullable_to_non_nullable
+              as int,
+      hasMore: null == hasMore
+          ? _self.hasMore
+          : hasMore // ignore: cast_nullable_to_non_nullable
+              as bool,
+      searchQuery: null == searchQuery
+          ? _self.searchQuery
+          : searchQuery // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }

@@ -8,7 +8,7 @@ class FetchProductListUseCase {
 
   FetchProductListUseCase(this._repository);
 
-  Future<Either<Failure, ProductListEntity>> call({required int pageNo}) async {
-    return await _repository.fetchProductList(pageNo: pageNo);
+  Future<Either<Failure, ProductListEntity>> call({required int pageNo, String? searchQuery}) async {
+    return await _repository.fetchProductList(pageNo: pageNo, searchQuery: searchQuery);
   }
 }

@@ -3,5 +3,5 @@ import 'package:auth/src/features/home/domain/entities/product/product_list_enti
 import 'package:dartz/dartz.dart';
 
 abstract class HomeRepository {
-  Future<Either<Failure, ProductListEntity>> fetchProductList({required int pageNo});
+  Future<Either<Failure, ProductListEntity>> fetchProductList({required int pageNo, String? searchQuery});
 }

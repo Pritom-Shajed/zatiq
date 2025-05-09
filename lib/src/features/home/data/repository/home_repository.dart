@@ -9,7 +9,7 @@ class HomeRepositoryImpl implements HomeRepository {
   HomeRepositoryImpl(this._remoteService);
 
   @override
-  Future<Either<Failure, ProductListEntity>> fetchProductList({required int pageNo}) async {
-    return await _remoteService.fetchProductList(pageNo: pageNo);
+  Future<Either<Failure, ProductListEntity>> fetchProductList({required int pageNo, String? searchQuery}) async {
+    return await _remoteService.fetchProductList(pageNo: pageNo, searchQuery: searchQuery);
   }
 }
