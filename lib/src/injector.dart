@@ -4,6 +4,7 @@ import 'package:auth/src/features/home/data/repository/home_repository.dart';
 import 'package:auth/src/features/home/data/source/local/home_local_service.dart';
 import 'package:auth/src/features/home/data/source/remote/home_remote_service.dart';
 import 'package:auth/src/features/home/domain/repository/home_repository.dart';
+import 'package:auth/src/features/home/domain/usecase/fetch_product_list_usecase.dart';
 import 'package:auth/src/features/home/presentation/bloc/home_bloc.dart';
 import 'package:auth/src/features/settings/data/models/settings_model.dart';
 import 'package:auth/src/features/settings/data/repositories/hive_repository_impl.dart';
@@ -30,9 +31,10 @@ Future<void> initialize() async {
   sl.registerSingleton<HomeRmoteService>(HomeRmoteServiceImpl(sl()));
 
   // Repositories
-  sl.registerSingleton<HomeRepository>(HomeRepositoryImpl());
+  sl.registerSingleton<HomeRepository>(HomeRepositoryImpl(sl()));
 
   // Usecases
+  sl.registerSingleton<FetchProductListUseCase>(FetchProductListUseCase(sl()));
 
   // Blocs
   sl.registerFactory<LocaleBloc>(() => LocaleBloc(sl()));
@@ -40,5 +42,5 @@ Future<void> initialize() async {
   sl.registerFactory<ThemeBloc>(() => ThemeBloc(sl()));
   sl.registerFactory<UrlConfigBloc>(() => UrlConfigBloc(sl()));
   sl.registerFactory<SettingsBloc>(() => SettingsBloc(sl()));
-  sl.registerFactory<HomeBloc>(() => HomeBloc());
+  sl.registerFactory<HomeBloc>(() => HomeBloc(sl()));
 }

@@ -1,5 +1,5 @@
 class ApiEndpoints {
   ApiEndpoints._();
 
-  static const String productList = 'api/ProductList';
+  static  String productList({int? pageNo}) => 'api/ProductList?page=$pageNo';
 }
