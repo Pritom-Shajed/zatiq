@@ -1,7 +1,7 @@
-import 'package:auth/src/core/utils/colors/app_colors.dart';
-import 'package:auth/src/core/utils/extensions/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:zatiq/src/core/utils/colors/app_colors.dart';
+import 'package:zatiq/src/core/utils/extensions/extensions.dart';
 
 class AppLoaders {
   AppLoaders._();

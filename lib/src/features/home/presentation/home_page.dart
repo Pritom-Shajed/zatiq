@@ -1,19 +1,19 @@
-import 'package:auth/src/core/router/router.dart';
-import 'package:auth/src/core/shared/button/basic_app_button.dart';
-import 'package:auth/src/core/shared/page_padding/page_padding.dart';
-import 'package:auth/src/core/shared/text_field/basic_text_field.dart';
-import 'package:auth/src/core/utils/colors/app_colors.dart';
-import 'package:auth/src/core/utils/debouncer/debouncer.dart';
-import 'package:auth/src/core/utils/loader/app_loaders.dart';
-import 'package:auth/src/core/utils/responsive/responsive_utils.dart';
-import 'package:auth/src/features/home/presentation/bloc/home_bloc.dart';
-import 'package:auth/src/features/home/presentation/components/product_card.dart';
-import 'package:auth/src/features/settings/presentation/view/settings_view.dart';
-import 'package:auth/src/localization/app_locale.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:solar_icon_pack/solar_linear_icons.dart';
+import 'package:zatiq/src/core/router/router.dart';
+import 'package:zatiq/src/core/shared/button/basic_app_button.dart';
+import 'package:zatiq/src/core/shared/page_padding/page_padding.dart';
+import 'package:zatiq/src/core/shared/text_field/basic_text_field.dart';
+import 'package:zatiq/src/core/utils/colors/app_colors.dart';
+import 'package:zatiq/src/core/utils/debouncer/debouncer.dart';
+import 'package:zatiq/src/core/utils/loader/app_loaders.dart';
+import 'package:zatiq/src/core/utils/responsive/responsive_utils.dart';
+import 'package:zatiq/src/features/home/presentation/bloc/home_bloc.dart';
+import 'package:zatiq/src/features/home/presentation/components/product_card.dart';
+import 'package:zatiq/src/features/settings/presentation/view/settings_view.dart';
+import 'package:zatiq/src/localization/app_locale.dart';
 
 class HomePage extends StatefulWidget {
   static const name = 'home';

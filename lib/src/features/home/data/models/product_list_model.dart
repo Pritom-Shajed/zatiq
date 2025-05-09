@@ -1,4 +1,4 @@
-import 'package:auth/src/features/home/domain/entities/product/product_list_entity.dart';
+import 'package:zatiq/src/features/home/domain/entities/product/product_list_entity.dart';
 
 import 'product_model.dart';
 

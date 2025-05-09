@@ -1,12 +1,12 @@
 import 'dart:io';
 
-import 'package:auth/src/core/configs/get_platform.dart';
-import 'package:auth/src/core/network/model/auth_store.dart';
-import 'package:auth/src/injector.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_ce_flutter/hive_flutter.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:zatiq/src/core/configs/get_platform.dart';
+import 'package:zatiq/src/core/network/model/auth_store.dart';
+import 'package:zatiq/src/injector.dart';
 
 import '../../../../core/utils/logger/logger_helper.dart';
 import '../../domain/repositories/hive_repository.dart';

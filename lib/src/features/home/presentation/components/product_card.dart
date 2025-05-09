@@ -1,10 +1,10 @@
-import 'package:auth/src/core/configs/constants.dart';
-import 'package:auth/src/core/utils/extensions/extensions.dart';
-import 'package:auth/src/core/utils/images/app_images.dart';
-import 'package:auth/src/core/utils/responsive/responsive_utils.dart';
-import 'package:auth/src/features/home/domain/entities/product/product_entity.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:zatiq/src/core/configs/constants.dart';
+import 'package:zatiq/src/core/utils/extensions/extensions.dart';
+import 'package:zatiq/src/core/utils/images/app_images.dart';
+import 'package:zatiq/src/core/utils/responsive/responsive_utils.dart';
+import 'package:zatiq/src/features/home/domain/entities/product/product_entity.dart';
 
 class ProductCard extends StatelessWidget {
   final ProductEntity product;

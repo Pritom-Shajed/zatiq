@@ -1,6 +1,6 @@
-import 'package:auth/src/core/configs/constants.dart';
-import 'package:auth/src/core/utils/extensions/extensions.dart';
 import 'package:flutter/material.dart';
+import 'package:zatiq/src/core/configs/constants.dart';
+import 'package:zatiq/src/core/utils/extensions/extensions.dart';
 
 class AnimatedWidgetShower extends StatelessWidget {
   const AnimatedWidgetShower({

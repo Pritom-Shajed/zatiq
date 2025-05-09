@@ -1,15 +1,15 @@
 import 'dart:async';
 
-import 'package:auth/src/core/configs/environment.dart';
-import 'package:auth/src/core/configs/get_platform.dart';
-import 'package:auth/src/core/network/api_client.dart';
-import 'package:auth/src/core/shared/error/app_error_view.dart';
-import 'package:auth/src/features/settings/data/repositories/settings_repository_impl.dart';
-import 'package:auth/src/injector.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
+import 'package:zatiq/src/core/configs/environment.dart';
+import 'package:zatiq/src/core/configs/get_platform.dart';
+import 'package:zatiq/src/core/network/api_client.dart';
+import 'package:zatiq/src/core/shared/error/app_error_view.dart';
+import 'package:zatiq/src/features/settings/data/repositories/settings_repository_impl.dart';
+import 'package:zatiq/src/injector.dart';
 
 import '../../features/settings/data/repositories/hive_repository_impl.dart';
 import '../utils/logger/logger_helper.dart';

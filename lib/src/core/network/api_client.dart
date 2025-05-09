@@ -1,16 +1,16 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:auth/src/core/configs/constants.dart';
-import 'package:auth/src/core/configs/environment.dart';
-import 'package:auth/src/core/network/enum/method.dart';
-import 'package:auth/src/core/network/model/auth_store.dart';
-import 'package:auth/src/core/utils/extensions/extensions.dart';
-import 'package:auth/src/core/utils/logger/logger_helper.dart';
-import 'package:auth/src/features/settings/data/models/settings_model.dart';
-import 'package:auth/src/features/settings/data/repositories/hive_box.dart';
-import 'package:auth/src/injector.dart';
 import 'package:dio/dio.dart';
+import 'package:zatiq/src/core/configs/constants.dart';
+import 'package:zatiq/src/core/configs/environment.dart';
+import 'package:zatiq/src/core/network/enum/method.dart';
+import 'package:zatiq/src/core/network/model/auth_store.dart';
+import 'package:zatiq/src/core/utils/extensions/extensions.dart';
+import 'package:zatiq/src/core/utils/logger/logger_helper.dart';
+import 'package:zatiq/src/features/settings/data/models/settings_model.dart';
+import 'package:zatiq/src/features/settings/data/repositories/hive_box.dart';
+import 'package:zatiq/src/injector.dart';
 
 class ApiClient {
   AuthStore? authStore;

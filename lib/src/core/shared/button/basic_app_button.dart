@@ -1,5 +1,5 @@
-import 'package:auth/src/core/utils/extensions/extensions.dart';
 import 'package:flutter/material.dart';
+import 'package:zatiq/src/core/utils/extensions/extensions.dart';
 
 class BasicAppButton extends StatelessWidget {
   final VoidCallback onTap;

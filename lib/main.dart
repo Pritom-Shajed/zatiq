@@ -1,9 +1,9 @@
-import 'package:auth/src/app.dart';
-import 'package:auth/src/core/initializer/initializer.dart';
-import 'package:auth/src/core/utils/colors/app_colors.dart';
-import 'package:auth/src/core/utils/loader/app_loaders.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:zatiq/src/app.dart';
+import 'package:zatiq/src/core/initializer/initializer.dart';
+import 'package:zatiq/src/core/utils/colors/app_colors.dart';
+import 'package:zatiq/src/core/utils/loader/app_loaders.dart';
 
 const isProduction = false;
 void main() {

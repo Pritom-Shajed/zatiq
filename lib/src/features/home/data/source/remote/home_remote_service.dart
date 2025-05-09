@@ -1,14 +1,14 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:auth/src/core/network/api_client.dart';
-import 'package:auth/src/core/network/endpoints/api_endpoints.dart';
-import 'package:auth/src/core/network/enum/method.dart';
-import 'package:auth/src/core/network/failure/failure.dart';
-import 'package:auth/src/features/home/data/models/product_list_model.dart';
-import 'package:auth/src/features/home/domain/entities/product/product_list_entity.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:zatiq/src/core/network/api_client.dart';
+import 'package:zatiq/src/core/network/endpoints/api_endpoints.dart';
+import 'package:zatiq/src/core/network/enum/method.dart';
+import 'package:zatiq/src/core/network/failure/failure.dart';
+import 'package:zatiq/src/features/home/data/models/product_list_model.dart';
+import 'package:zatiq/src/features/home/domain/entities/product/product_list_entity.dart';
 
 abstract class HomeRmoteService {
   Future<Either<Failure, ProductListEntity>> fetchProductList({required int pageNo, String? searchQuery});

@@ -1,8 +1,8 @@
-import 'package:auth/src/core/configs/constants.dart';
-import 'package:auth/src/localization/app_locale.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:zatiq/src/core/configs/constants.dart';
+import 'package:zatiq/src/localization/app_locale.dart';
 
 class MaintenanceBreak extends StatelessWidget {
   const MaintenanceBreak({super.key});
@@ -46,11 +46,9 @@ class MaintenanceBreak extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 20.0),
                 child: InkWell(
-                  onTap: () async =>
-                      await launchUrl(Uri.parse('http://algoramming.com')),
+                  onTap: () async => await launchUrl(Uri.parse('http://algoramming.com')),
                   child: Container(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 3.0, horizontal: 20.0),
+                    padding: const EdgeInsets.symmetric(vertical: 3.0, horizontal: 20.0),
                     decoration: BoxDecoration(
                       border: Border.all(
                         color: Theme.of(context).primaryColor,

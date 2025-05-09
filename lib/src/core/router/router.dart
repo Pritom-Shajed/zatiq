@@ -1,18 +1,17 @@
-import 'package:auth/src/core/configs/get_platform.dart';
-import 'package:auth/src/core/network/api_client.dart';
-import 'package:auth/src/core/router/app_routes.dart';
-import 'package:auth/src/core/shared/maintenance_break/maintenance_break.dart';
-import 'package:auth/src/core/shared/page_not_found/page_not_found.dart';
-import 'package:auth/src/core/utils/logger/logger_helper.dart';
-import 'package:auth/src/features/home/presentation/home_page.dart';
-import 'package:auth/src/features/settings/presentation/view/settings_view.dart';
-import 'package:auth/src/injector.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:zatiq/src/core/configs/get_platform.dart';
+import 'package:zatiq/src/core/router/app_routes.dart';
+import 'package:zatiq/src/core/shared/maintenance_break/maintenance_break.dart';
+import 'package:zatiq/src/core/shared/page_not_found/page_not_found.dart';
+import 'package:zatiq/src/core/utils/logger/logger_helper.dart';
+import 'package:zatiq/src/features/home/presentation/home_page.dart';
+import 'package:zatiq/src/features/settings/presentation/view/settings_view.dart';
+import 'package:zatiq/src/injector.dart';
 
 Future<String?> authRedirect(BuildContext context, GoRouterState state) async {
   final path = '/${state.fullPath?.split('/').last.toLowerCase()}';
-  
+
   // Maintenance Break
   if (AppRoutes.isMaintenanceBreak) {
     log.f('Redirecting to ${AppRoutes.maintenanceBreakRoute} from $path Reason: Maintenance Break.');

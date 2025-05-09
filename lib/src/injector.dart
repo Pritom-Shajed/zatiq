@@ -1,19 +1,19 @@
-import 'package:auth/src/core/configs/get_platform.dart';
-import 'package:auth/src/core/network/api_client.dart';
-import 'package:auth/src/features/home/data/repository/home_repository.dart';
-import 'package:auth/src/features/home/data/source/local/home_local_service.dart';
-import 'package:auth/src/features/home/data/source/remote/home_remote_service.dart';
-import 'package:auth/src/features/home/domain/repository/home_repository.dart';
-import 'package:auth/src/features/home/domain/usecase/fetch_product_list_usecase.dart';
-import 'package:auth/src/features/home/presentation/bloc/home_bloc.dart';
-import 'package:auth/src/features/settings/data/models/settings_model.dart';
-import 'package:auth/src/features/settings/data/repositories/hive_repository_impl.dart';
-import 'package:auth/src/features/settings/presentation/bloc/locale/locale_bloc.dart';
-import 'package:auth/src/features/settings/presentation/bloc/performance_overlay/bloc/performance_overlay_bloc.dart';
-import 'package:auth/src/features/settings/presentation/bloc/settings/bloc/settings_bloc.dart';
-import 'package:auth/src/features/settings/presentation/bloc/theme/bloc/theme_bloc.dart';
-import 'package:auth/src/features/settings/presentation/bloc/url_config/bloc/url_config_bloc.dart';
 import 'package:get_it/get_it.dart';
+import 'package:zatiq/src/core/configs/get_platform.dart';
+import 'package:zatiq/src/core/network/api_client.dart';
+import 'package:zatiq/src/features/home/data/repository/home_repository.dart';
+import 'package:zatiq/src/features/home/data/source/local/home_local_service.dart';
+import 'package:zatiq/src/features/home/data/source/remote/home_remote_service.dart';
+import 'package:zatiq/src/features/home/domain/repository/home_repository.dart';
+import 'package:zatiq/src/features/home/domain/usecase/fetch_product_list_usecase.dart';
+import 'package:zatiq/src/features/home/presentation/bloc/home_bloc.dart';
+import 'package:zatiq/src/features/settings/data/models/settings_model.dart';
+import 'package:zatiq/src/features/settings/data/repositories/hive_repository_impl.dart';
+import 'package:zatiq/src/features/settings/presentation/bloc/locale/locale_bloc.dart';
+import 'package:zatiq/src/features/settings/presentation/bloc/performance_overlay/bloc/performance_overlay_bloc.dart';
+import 'package:zatiq/src/features/settings/presentation/bloc/settings/bloc/settings_bloc.dart';
+import 'package:zatiq/src/features/settings/presentation/bloc/theme/bloc/theme_bloc.dart';
+import 'package:zatiq/src/features/settings/presentation/bloc/url_config/bloc/url_config_bloc.dart';
 
 final sl = GetIt.instance;
 

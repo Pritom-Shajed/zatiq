@@ -1,7 +1,7 @@
-import 'package:auth/src/features/home/domain/entities/product/product_entity.dart';
-import 'package:auth/src/features/home/domain/usecase/fetch_product_list_usecase.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:zatiq/src/features/home/domain/entities/product/product_entity.dart';
+import 'package:zatiq/src/features/home/domain/usecase/fetch_product_list_usecase.dart';
 
 part 'home_bloc.freezed.dart';
 part 'home_event.dart';

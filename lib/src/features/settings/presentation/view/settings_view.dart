@@ -1,8 +1,8 @@
-import 'package:auth/src/core/configs/constants.dart';
-import 'package:auth/src/features/settings/presentation/view/components/locale_tile.dart';
-import 'package:auth/src/features/settings/presentation/view/components/performance_overlay_tile.dart';
-import 'package:auth/src/features/settings/presentation/view/components/theme_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:zatiq/src/core/configs/constants.dart';
+import 'package:zatiq/src/features/settings/presentation/view/components/locale_tile.dart';
+import 'package:zatiq/src/features/settings/presentation/view/components/performance_overlay_tile.dart';
+import 'package:zatiq/src/features/settings/presentation/view/components/theme_tile.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({super.key});

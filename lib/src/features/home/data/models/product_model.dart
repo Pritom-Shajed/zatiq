@@ -1,4 +1,4 @@
-import 'package:auth/src/features/home/domain/entities/product/product_entity.dart';
+import 'package:zatiq/src/features/home/domain/entities/product/product_entity.dart';
 
 class ProductModel extends ProductEntity {
   const ProductModel({
